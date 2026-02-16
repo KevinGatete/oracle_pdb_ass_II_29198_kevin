@@ -40,14 +40,56 @@ Create a permanent Pluggable Database (PDB) with a dedicated user account for fu
 - **Username:** `kevin_plsqlauca_29198`
 - **Password:** `0784575407`
 
-### Steps Performed
-1. Connected to the Container Database (CDB) as SYSDBA
-2. Created the pluggable database using the CREATE PLUGGABLE DATABASE command
-3. Opened the PDB in READ WRITE mode
-4. Connected to the newly created PDB
-5. Created the user account with necessary privileges
-6. Granted required permissions (CONNECT, RESOURCE, DBA if needed)
+## Steps Performed
 
+#### Step 1: Connect to CDB as SYSDBA
+```sql
+sqlplus / as sysdba
+```
+
+#### Step 2: Create the Pluggable Database
+```sql
+CREATE PLUGGABLE DATABASE ke_pdb_29198
+ADMIN USER pdb_admin IDENTIFIED BY YourPassword
+FILE_NAME_CONVERT = ('pdbseed', 'ke_pdb_29198');
+```
+
+#### Step 3: Open the PDB in READ WRITE Mode
+```sql
+ALTER PLUGGABLE DATABASE ke_pdb_29198 OPEN;
+```
+
+#### Step 4: Verify PDB Status
+```sql
+SHOW PDBS;
+-- OR
+SELECT pdb_name, status FROM dba_pdbs;
+```
+
+#### Step 5: Connect to the New PDB
+```sql
+ALTER SESSION SET CONTAINER = ke_pdb_29198;
+```
+
+#### Step 6: Create User Account
+```sql
+CREATE USER kevin_plsqlauca_29198 IDENTIFIED BY YourPassword;
+```
+
+#### Step 7: Grant Privileges
+```sql
+GRANT CONNECT, RESOURCE TO kevin_plsqlauca_29198;
+GRANT CREATE SESSION TO kevin_plsqlauca_29198;
+GRANT CREATE TABLE TO kevin_plsqlauca_29198;
+GRANT UNLIMITED TABLESPACE TO kevin_plsqlauca_29198;
+-- Optional: Grant DBA if needed for course work
+-- GRANT DBA TO kevin_plsqlauca_29198;
+```
+
+#### Step 8: Verify User Creation
+```sql
+SELECT username FROM dba_users WHERE username = 'KEVIN_PLSQLAUCA_29198';
+```
 ### Evidence
 - See screenshot: `screenshots/task1_pdb_creation.png`
 - See screenshot: `screenshots/task1_pdb_open_state.png`
