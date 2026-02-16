@@ -3,7 +3,7 @@
 # Oracle Pluggable Database Assignment II
 
 **Course:** Database Development with PL/SQL (INSY 8311)  
-**Student Name:** Kevin Gatete   
+**Student Name:** Kevin Gatete    
 **Student ID:** 29198  
 **Assignment Date:** February 9, 2026  
 **Submission Date:** February 16, 2026
