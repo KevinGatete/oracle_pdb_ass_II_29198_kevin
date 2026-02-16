@@ -23,10 +23,10 @@ This assignment demonstrates practical understanding of Oracle Multitenant Archi
 
 ## Oracle Environment
 
-- **Oracle Database Version:** [Specify your version, e.g., Oracle 19c/21c]
-- **Operating System:** [Specify your OS, e.g., Windows 10/Linux Ubuntu]
-- **Container Database (CDB):** [Your CDB name]
-- **Oracle Enterprise Manager:** [Version if known]
+- **Oracle Database Version:** Oracle 21c
+- **Operating System:** Windows 10
+- **Container Database (CDB):** EX
+- **Oracle Enterprise Manager:** Single Instance.
 
 ---
 
