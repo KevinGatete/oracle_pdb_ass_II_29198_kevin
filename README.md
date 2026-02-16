@@ -38,7 +38,7 @@ Create a permanent Pluggable Database (PDB) with a dedicated user account for fu
 ### Naming Conventions Used
 - **PDB Name:** `ke_pdb_29198`
 - **Username:** `kevin_plsqlauca_29198`
-- **Password:** [Secure password set]
+- **Password:** `0784575407`
 
 ### Steps Performed
 1. Connected to the Container Database (CDB) as SYSDBA
